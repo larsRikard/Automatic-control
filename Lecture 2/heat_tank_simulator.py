@@ -18,6 +18,7 @@ C_1 = specific_heat_capacity*density*flow           #c*ρ*F
 C_2 = heat_transfer_coefficient                     #U
 C_3 = specific_heat_capacity*density*volume_tank    #C*ρ*v
 
+#asdf
 
 def heat_tank_simulator(time_step: float, start_time: float, stop_time: float, power: float):
     temperature = temp_liquid_init
