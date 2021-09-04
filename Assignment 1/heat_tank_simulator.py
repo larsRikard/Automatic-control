@@ -20,7 +20,7 @@ C_2 = heat_transfer_coefficient  # U
 C_3 = specific_heat_capacity*density*volume_tank  # C*ρ*v
 
 
-def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: float = 5000, power: float = 10_250, time_delay: float = 60):
+def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: float = 5000, power: float = 10_250, time_delay: float = 0):
 
     # Initializing the simulator
     temperature = temp_liquid_init
@@ -39,7 +39,7 @@ def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: 
     for i in range(amount_of_steps):
 
         current_power = 0
-        if(i > amount_of_steps_of_delay):
+        if(i >= amount_of_steps_of_delay):
             current_power = power
 
         current_time = i*time_step
@@ -62,23 +62,21 @@ def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: 
     plot.close("all")  # Closes all figures before plotting
     plot.figure(num=1, figsize=(12, 9))
 
-    # * Plot 1
+    # Plot 1
     plot.subplot(2, 1, 1)
     plot.plot(time_array, temp_liquid_array, "b")
     plot.plot(time_array, temp_in_array, "r")
     plot.plot(time_array, temp_env_array, "g")
     plot.grid()
-    #plot.ylim(0.9, 2.6)
     plot.xlabel("t[s]")
     plot.ylabel("[℃]")
     plot.legend(["Liquid temperature",
                 "In flow temperature", "environment temperature"])
 
-    # * Plot 2
+    # Plot 2
     plot.subplot(2, 1, 2)
     plot.plot(time_array, power_array, "r")
     plot.grid()
-    #plot.ylim(1.9, 4.1)
     plot.xlabel("t[s]")
     plot.ylabel("[W]")
     plot.legend(["Power"])
@@ -87,4 +85,4 @@ def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: 
     plot.show()
 
 
-heat_tank_simulator(time_step=1, start_time=0, stop_time=200, power=10_250, time_delay=60)
+heat_tank_simulator(time_step=1, start_time=0, stop_time=5000, power=10_250, time_delay=0)
