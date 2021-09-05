@@ -1,0 +1,6 @@
+authors:
+  - family-names: Rådstoga
+    given-names: Lars Rikard
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+title: "Automatic Control Coursework"
