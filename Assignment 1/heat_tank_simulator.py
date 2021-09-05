@@ -5,9 +5,6 @@ import math
 power_init = 0  # P
 power_op = 10_250  # P_op
 temp_liquid_init = 20  # T
-
-#asdf
-
 temp_env = 20  # T_env
 temp_in = 20  # T_in
 flow = 0.25*10**(-3)  # F
