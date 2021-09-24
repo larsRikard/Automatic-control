@@ -19,6 +19,7 @@ C_2 = heat_transfer_coefficient  # U
 C_3 = specific_heat_capacity*density*volume_tank  # C*ρ*v
 
 
+
 def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: float = 5000, power: float = 10_250, time_delay: float = 0):
     """Simulates the temperature development in a tank with a power controlled heat element.
 
@@ -29,7 +30,6 @@ def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: 
         power (float, optional): Static power used by the simulator. Defaults to 10_250 [W].
         time_delay (float, optional): Delay before the power is turned on. Defaults to 0 [s].
     """
-
     # Initializing the simulator
     temperature = temp_liquid_init
     amount_of_steps = int(math.floor((stop_time-start_time)/time_step))
@@ -95,6 +95,11 @@ def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: 
     plot.show()
 
 
-if __name__ == "__main__":
+def main():
     heat_tank_simulator(time_step=1, start_time=0,
                         stop_time=5000, power=10_250, time_delay=0)
+
+
+
+if __name__ == "__main__":
+    main()
