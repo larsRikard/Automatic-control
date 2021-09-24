@@ -34,7 +34,8 @@ def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: 
     temperature = temp_liquid_init
     amount_of_steps = int(math.floor((stop_time-start_time)/time_step))
     print(f'{amount_of_steps = }')
-    amount_of_steps_of_delay = int(math.floor((time_delay-start_time)/time_step))
+    amount_of_steps_of_delay = int(
+        math.floor((time_delay-start_time)/time_step))
 
     # initializing arrays for efficiency, using np.zeros() is a little slower but a bit safer than np.empty()
     time_array = np.zeros(amount_of_steps)
@@ -89,8 +90,11 @@ def heat_tank_simulator(time_step: float = 1, start_time: float = 0, stop_time: 
     plot.ylabel("[W]")
     plot.legend(["Power"])
 
+    # Save and show
     plot.savefig("plot_heat_tank.svg")
     plot.show()
 
+
 if __name__ == "__main__":
-    heat_tank_simulator(time_step=1, start_time=0, stop_time=5000, power=10_250, time_delay=0)
+    heat_tank_simulator(time_step=1, start_time=0,
+                        stop_time=5000, power=10_250, time_delay=0)
