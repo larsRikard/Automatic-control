@@ -13,15 +13,15 @@ model wood_chips_tank_pi_controlled
     Placement(visible = true, transformation(origin = {52, -72}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add sum_flow(k1 = -1)  annotation(
     Placement(visible = true, transformation(origin = {114, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Step w_out(height = 33.33, offset = 25, startTime = 7500)  annotation(
+  Modelica.Blocks.Sources.Step w_out(height = 33.33, offset = 25, startTime = 5000)  annotation(
     Placement(visible = true, transformation(origin = {84, 58}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Product w_in annotation(
     Placement(visible = true, transformation(origin = {60, 4}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add error(k2 = -1)  annotation(
     Placement(visible = true, transformation(origin = {-120, 36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.PI pi(T = 9999999, k = 12.15)  annotation(
+  Modelica.Blocks.Continuous.PI pi(T = 833.33, k = 10.935)  annotation(
     Placement(visible = true, transformation(origin = {-62, 36}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Step setpoint(height = 0.5, offset = 5, startTime = 5000)  annotation(
+  Modelica.Blocks.Sources.Step setpoint(height = 0, offset = 5, startTime = 0)  annotation(
     Placement(visible = true, transformation(origin = {-176, 48}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Nonlinear.FixedDelay tau(delayTime = 250) annotation(
     Placement(visible = true, transformation(origin = {-6, -6}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
