@@ -129,3 +129,4 @@ dmypy.json
 
 #Production files
 *.svg
+test/AC-assignement-3_Level_avg_control.py
